@@ -9,32 +9,91 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief Header file for my C-programming code
  *
- * <Add Extended Description Here>
+ * includes declerations and documentation for the functions from the stats.c file
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Ahmed Elmashad
+ * @date 11/05/2020
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+	void print_statistics(unsigned char Max,unsigned char Min,unsigned char Mean,unsigned char Med);
+	void print_array(unsigned char *x, int s);
+	void sort_array(unsigned char *x, int s);
+	unsigned char find_median(unsigned char *x, int s);
+	unsigned char find_mean(unsigned char *x, int s);
+	unsigned char find_maximum(unsigned char *x, int s);
+	unsigned char find_minimum(unsigned char *x, int s);
+/*
+*Functions:
 
-/**
- * @brief <Add Brief Description of Function Here>
- *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
- */
+		*****************************************************************
+		*Name : Main()							*
+		*Type : Void							*	
+		*Description : Contains the main executing code			*
+		*Input Parameters : None					*	
+		*Output Parameters: Returns 0 					*
+		*****************************************************************
+		*Name : print_statistics()                                      *
+                *Type : Void                                                    *
+                *Description : Prints the statistics including Max, Min, Mean,  *
+		*	       Median			                        *
+                *Input Parameters : Char Max; Largest Value in the array.  	*
+		*		    Char Min; Smallest Value in the array.	*
+		*		    Char Mean; Mean of the array.		*
+		*		    Char Med; Median of the array.		*
+                *Output Parameters: Returns nothing                             *
+                *****************************************************************
+	        *Name : print_array()	                                        *
+                *Type : Void                                                    *
+                *Description : Prints the array in an organised way             *
+                *Input Parameters : char* x; pointer to the array		*
+	        *		    int s; size of the array                    *
+                *Output Parameters: Returns nothing                             *
+                *****************************************************************
+	        *Name : sort_array()                                  		*
+                *Type : Void                                                    *
+                *Description :  Sorts the array from the largest to		*
+		*	        the smallest.			                *
+                *Input Parameters : char* x; pointer to the array               *
+                *                   int s; size of the array                    *
+                *Output Parameters: Returns nothing                             *
+                *****************************************************************
+		*Name : find_median()                                           *
+                *Type : char                                                    *
+                *Description : finds the median of the array                    *
+                *Input Parameters : char* x; pointer to the array		*
+		*		    int s; size of the array			*
+                *Output Parameters: char median; returns the median of the array*
+                *****************************************************************
+		*Name : find_mean()                                             *
+                *Type : char                                                    *
+                *Description : finds the mean of the array                      *
+                *Input Parameters : char* x; pointer to the array		*
+		*		    int s; size of the array                    *
+                *Output Parameters: char mean; returns the mean of the array    *
+                *****************************************************************
+		*Name : find_maximum()                                          *
+                *Type : char                                                    *
+                *Description : finds the Max of the array           	        *
+                *Input Parameters : char* x; pointer to the array		*
+		*		    int s; size of the array                    *
+                *Output Parameters: char maximum; returns the max of the array  *
+                *****************************************************************
+		*Name : find_minimum()                                          *
+                *Type : char                                                    *
+                *Description : finds the Min of the array          	        *
+                *Input Parameters : char* x; pointer to the array		*
+		*		    int s; size of the array                    *
+                *Output Parameters: char minimum; returns the min of the array  *
+                *****************************************************************
+
+*/
+
 
 
 #endif /* __STATS_H__ */

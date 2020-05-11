@@ -9,13 +9,20 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Implementation file for my C-programming code
  *
- * <Add Extended Description Here>
+ * contains 8 Functions : 1)  Main()
+			  2)  print_statistics()
+			  3)  print_array()
+			  4)  sort_array() 
+			  5)  find_median()
+			  6)  find_mean()                                             
+			  7)  find_maximum()
+			  8)  find_minimum() 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Ahmed Elmashad
+ * @date 11/05/2020
  *
  */
 
@@ -35,9 +42,27 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  /* Other Variable Declarations*/
+	unsigned char Max;
+	unsigned char Min;
+	unsigned char Mean;
+	unsigned char Med;
+  /* Statistics and Printing Functions*/
+	Max = find_maximum( test, SIZE);
+	Min = find_minimum( test, SIZE);
+	Med = find_median( test, SIZE);
+	Mean = find_mean( test, SIZE);
+	sort_array( test, SIZE);
+	print_array( test, SIZE);
+	print_statistics(Max, Min, Mean, Med); 
+	
 
 }
 
-/* Add other Implementation File Code Here */
+	void print_statistics(unsigned char Max,unsigned char Min,unsigned char Mean,unsigned char Med){}
+	void print_array(unsigned char *x, int s){}
+	void sort_array(unsigned char *x, int s){}
+	unsigned char find_median(unsigned char *x, int s){}
+	unsigned char find_mean(unsigned char *x, int s){}
+	unsigned char find_maximum(unsigned char *x, int s){}
+	unsigned char find_minimum(unsigned char *x, int s){}
