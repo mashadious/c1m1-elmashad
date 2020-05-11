@@ -45,24 +45,103 @@ void main() {
   /* Other Variable Declarations*/
 	unsigned char Max;
 	unsigned char Min;
-	unsigned char Mean;
+	unsigned int Mean;
 	unsigned char Med;
   /* Statistics and Printing Functions*/
+	sort_array( test, SIZE);
 	Max = find_maximum( test, SIZE);
 	Min = find_minimum( test, SIZE);
 	Med = find_median( test, SIZE);
 	Mean = find_mean( test, SIZE);
-	sort_array( test, SIZE);
 	print_array( test, SIZE);
 	print_statistics(Max, Min, Mean, Med); 
 	
 
+	}
+
+	void print_statistics(unsigned char Max,unsigned char Min,unsigned char Mean,unsigned char Med){
+	printf("\n\n the following are the data extracted from the array: \n\n Maximum: %d\n Minimum: %d\n Mean: %d\n Median: %d\n\n",Max,Min,Mean,Med);
+	return;
+	}
+	void print_array(unsigned char *x, int s){
+	printf("\n ");
+	for (int i=0; i<s; i++){
+	if (i%5 ==0){
+	printf("\n %d", *x);
+	}
+	else{
+	printf("\n %d", *x);
+	}
+	x++;
+	}
+	printf("\n\n");
+	return;
+
+	}
+	void sort_array(unsigned char *x, int s){
+	unsigned char temparray[s];
+	unsigned char temp1 = *x;
+	unsigned char temp2;
+	temparray[0]=*x;
+	for (int i = 1; i<s; i++){
+	x++;	
+	temp1 = *x;
+	temparray[i] = *x;
+	for (int j = 0; j<i; j++){
+	if(temp1> temparray[j]){
+	temparray[i]=temparray[j];
+	temparray[j] = temp1;
+	temp1 = temparray[i];
+			}
+		}
+	}
+	x=x-s+1;
+	for (int i=0; i<s; i++){
+	*x=temparray[i];
+	x++;
+	
+	}
+	return;
+	}
+
+	unsigned char find_median(unsigned char *x, int s){
+	unsigned char Med;
+	if(s%2==0){
+	Med = (*(x+(s/2))+*(x+(s/2)-1))/2;
+	}
+	else{
+	Med = *(x+(s/2));
+	}
+	return Med;
+	}
+	unsigned int find_mean(unsigned char *x, int s){
+	unsigned int mean =*x;
+	for (int i=0; i<s; i++){
+	x++;
+	mean =mean + *x;
+	}	
+	mean = mean/s;
+	return mean;
+	}
+	unsigned char find_maximum(unsigned char *x, int s){
+	unsigned char Max =*x;
+	for (int i=1; i<s; i++){
+	x++;
+	if(*x > Max){
+	Max =*x;
+		}
+	}	
+	return Max;
 }
 
-	void print_statistics(unsigned char Max,unsigned char Min,unsigned char Mean,unsigned char Med){}
-	void print_array(unsigned char *x, int s){}
-	void sort_array(unsigned char *x, int s){}
-	unsigned char find_median(unsigned char *x, int s){}
-	unsigned char find_mean(unsigned char *x, int s){}
-	unsigned char find_maximum(unsigned char *x, int s){}
-	unsigned char find_minimum(unsigned char *x, int s){}
+	unsigned char find_minimum(unsigned char *x, int s){
+	unsigned char Min =*x;
+	for (int i=1; i<s; i++){
+	x++;
+	if(*x < Min){
+	Min =*x;
+		}
+	}	
+	return Min;
+}	
+

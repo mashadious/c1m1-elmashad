@@ -25,7 +25,7 @@
 	void print_array(unsigned char *x, int s);
 	void sort_array(unsigned char *x, int s);
 	unsigned char find_median(unsigned char *x, int s);
-	unsigned char find_mean(unsigned char *x, int s);
+	unsigned int find_mean(unsigned char *x, int s);
 	unsigned char find_maximum(unsigned char *x, int s);
 	unsigned char find_minimum(unsigned char *x, int s);
 /*
